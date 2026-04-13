@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proctorly | Result</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body data-page="result">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <div class="brand-icon">FG</div>
+          <div>
+            <p class="brand-name">Proctorly</p>
+            <p class="brand-subtitle">AI Proctoring</p>
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <a class="nav-link" href="/dashboard.html">Home</a>
+          <a class="nav-link is-active" href="/result.html">Results</a>
+          <button class="nav-link nav-button" id="logoutButton" type="button">Logout</button>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Result Summary</p>
+            <h1 id="resultExamTitle">Exam Result</h1>
+          </div>
+          <div class="button-row tight">
+            <a class="secondary-button" href="/dashboard.html">Back to Dashboard</a>
+          </div>
+        </header>
+
+        <section class="result-grid">
+          <div class="score-card">
+            <p class="eyebrow">Overall Score</p>
+            <h2 id="resultScore">0</h2>
+            <p id="resultMarksText">0 / 0</p>
+          </div>
+
+          <div class="card">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Integrity Review</p>
+                <h3>Final Decision</h3>
+              </div>
+            </div>
+            <p class="result-status" id="resultDecision">continue</p>
+            <p id="resultSummary"></p>
+          </div>
+        </section>
+
+        <section class="dashboard-grid result-breakdown">
+          <div class="card">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Performance</p>
+                <h3>Attempt Details</h3>
+              </div>
+            </div>
+            <div class="metric-list" id="resultMetrics"></div>
+          </div>
+
+          <div class="card">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">My History</p>
+                <h3>Previous Attempts</h3>
+              </div>
+            </div>
+            <div id="resultsHistory" class="stack-sm"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>

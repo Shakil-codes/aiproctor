@@ -1,0 +1,66 @@
+{
+  "users": [
+    {
+      "name": "Demo Student",
+      "email": "student@proctorly.demo",
+      "password": "student123",
+      "role": "student"
+    },
+    {
+      "name": "Demo Admin",
+      "email": "admin@proctorly.demo",
+      "password": "admin123",
+      "role": "admin"
+    }
+  ],
+  "exam": {
+    "id": "sample-exam-001",
+    "title": "Web Security Fundamentals",
+    "description": "A short MCQ exam used to demo Proctorly monitoring and results.",
+    "durationMinutes": 20,
+    "totalMarks": 10,
+    "active": true
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "order": 1,
+      "prompt": "Which HTTP header is most commonly used to send a bearer token for authentication?",
+      "options": ["Authorization", "Accept", "Content-Length", "Cache-Control"],
+      "correctAnswerIndex": 0,
+      "marks": 2
+    },
+    {
+      "id": "q2",
+      "order": 2,
+      "prompt": "What is the main purpose of bcrypt in an authentication system?",
+      "options": ["Compress user profiles", "Hash passwords securely", "Encrypt JWTs", "Store tokens in localStorage"],
+      "correctAnswerIndex": 1,
+      "marks": 2
+    },
+    {
+      "id": "q3",
+      "order": 3,
+      "prompt": "Which browser event helps detect that a test tab is no longer visible?",
+      "options": ["resize", "visibilitychange", "submit", "hashchange"],
+      "correctAnswerIndex": 1,
+      "marks": 2
+    },
+    {
+      "id": "q4",
+      "order": 4,
+      "prompt": "Where should Proctorly keep temporary warning memory during an active exam?",
+      "options": ["Firebase results collection", "localStorage only", "Server-side in-memory Map", "Cookie headers"],
+      "correctAnswerIndex": 2,
+      "marks": 2
+    },
+    {
+      "id": "q5",
+      "order": 5,
+      "prompt": "What should be saved to Firebase after exam submission?",
+      "options": ["Full raw chatbot history", "Browser console logs", "Short integrity summary with score", "Every keypress captured during the test"],
+      "correctAnswerIndex": 2,
+      "marks": 2
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+*-adminsdk-*.json
+
+data/local-db.json
+output/
+.playwright-cli/
+Screenshots/

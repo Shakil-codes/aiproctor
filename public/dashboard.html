@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proctorly | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body data-page="dashboard">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <div class="brand-icon">FG</div>
+          <div>
+            <p class="brand-name">Proctorly</p>
+            <p class="brand-subtitle">AI Proctoring</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a class="nav-link is-active" href="/dashboard.html">Home</a>
+          <a class="nav-link" href="/result.html">Results</a>
+          <button class="nav-link nav-button" id="logoutButton" type="button">Logout</button>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <h1>Welcome back, <span id="studentName">Student</span></h1>
+            <p>You can start available exams and review your previous attempts here.</p>
+          </div>
+          <div class="profile-chip">
+            <span id="studentRole">student</span>
+          </div>
+        </header>
+
+        <section class="stats-grid" id="dashboardStats"></section>
+
+        <section class="dashboard-grid">
+          <div class="feature-panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Available Exam</p>
+                <h2>Ready for the next session</h2>
+              </div>
+            </div>
+            <div id="examList" class="stack-md"></div>
+          </div>
+
+          <div class="side-stack">
+            <div class="card">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow">Session Notes</p>
+                  <h3>Monitoring Rules</h3>
+                </div>
+              </div>
+              <ul class="mini-list">
+                <li>Focus loss, copy, and paste events are logged.</li>
+                <li>Repeated focus loss opens a warning widget near the exam.</li>
+                <li>Only a short final integrity summary is saved to Firestore.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow">Previous Attempts</p>
+                  <h3>Recent Scores</h3>
+                </div>
+              </div>
+              <div id="attemptList" class="stack-sm"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>

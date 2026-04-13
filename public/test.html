@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proctorly | Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body data-page="test">
+    <div class="warning-popup" id="warningPopup" hidden>
+      <p class="warning-popup-title" id="warningPopupTitle">Level 1 warning</p>
+      <p id="warningPopupMessage">Please stay focused on the test screen.</p>
+    </div>
+
+    <header class="exam-topbar">
+      <div>
+        <p class="eyebrow">Assessment</p>
+        <h1 id="examTitle">Loading exam...</h1>
+      </div>
+      <div class="exam-topbar-meta">
+        <div class="timer-pill">Time Left: <span id="timerValue">00:00</span></div>
+        <div class="profile-chip"><span id="examStudentName">Student</span></div>
+      </div>
+    </header>
+
+    <p class="warning-banner" id="warningBanner" hidden></p>
+
+    <main class="exam-shell">
+      <section class="exam-main">
+        <div class="progress-block">
+          <div class="progress-copy">
+            <span id="questionCounter">Question 1</span>
+            <span id="progressText">0% completed</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-value" id="progressValue"></div>
+          </div>
+        </div>
+
+        <div class="question-panel" id="questionPanel">
+          <div class="question-card" id="questionCard">
+            <span class="question-badge">Multiple Choice</span>
+            <h2 id="questionPrompt"></h2>
+            <div id="optionsList" class="options-list"></div>
+            <div class="question-actions">
+              <button type="button" class="ghost-button" id="prevQuestionButton">Previous</button>
+              <div class="button-row tight">
+                <button type="button" class="secondary-button" id="nextQuestionButton">Next</button>
+                <button type="button" class="primary-button" id="submitExamButton">Submit</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="integrity-card" id="integrityCard" hidden>
+            <p class="info-title">Interaction paused</p>
+            <p id="integrityMessage">
+              Repeated suspicious behavior was detected. Please respond in the chat widget to continue.
+            </p>
+          </div>
+
+          <div class="blocked-card" id="blockedCard" hidden>
+            <p class="blocked-title">Test blocked</p>
+            <p id="blockedMessage">Your test has been blocked by the proctoring system.</p>
+          </div>
+        </div>
+
+        <div class="exam-footer-meta">
+          <span>Encrypted session active</span>
+          <span id="autosaveStatus">Auto-saving progress</span>
+        </div>
+      </section>
+
+      <aside class="question-map">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Navigator</p>
+            <h3>Question Map</h3>
+          </div>
+        </div>
+        <div class="question-map-grid" id="questionMapGrid"></div>
+        <ul class="legend-list">
+          <li><span class="legend answered"></span>Answered</li>
+          <li><span class="legend current"></span>Current</li>
+          <li><span class="legend pending"></span>Pending</li>
+        </ul>
+      </aside>
+    </main>
+
+    <div class="chat-dock" id="chatDock">
+      <button type="button" class="chat-fab" id="chatToggleButton" aria-expanded="false">
+        <span class="chat-fab-label">AI</span>
+        <span class="chat-fab-dot" id="chatFabDot" hidden></span>
+      </button>
+
+      <section class="chat-widget is-collapsed" id="chatWidget">
+        <div class="chat-widget-head">
+          <div>
+            <p class="chat-title">Proctorly AI</p>
+            <p class="chat-subtitle">Integrity Officer</p>
+          </div>
+          <button type="button" class="chat-close-button" id="chatCloseButton" aria-label="Close chat">
+            x
+          </button>
+        </div>
+        <div class="chat-widget-body">
+          <div class="chat-thread" id="chatThread"></div>
+          <div class="chat-input-row">
+            <textarea id="chatReasonInput" rows="1" placeholder="Reply to Proctorly AI..."></textarea>
+            <button type="button" class="primary-button" id="sendReasonButton">Send</button>
+          </div>
+          <p class="form-message" id="chatMessage"></p>
+        </div>
+      </section>
+    </div>
+
+    <section class="lockout-screen" id="lockoutScreen" hidden>
+      <div class="lockout-card">
+        <p class="lockout-eyebrow">Session ended</p>
+        <h2>You have been logged out of this assessment</h2>
+        <p id="lockoutMessage">
+          Repeated suspicious activity triggered the final proctoring level. This exam session can no longer continue.
+        </p>
+        <button type="button" class="primary-button wide" id="returnLoginButton">Return to Login</button>
+      </div>
+    </section>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>
