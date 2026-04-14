@@ -82,15 +82,24 @@ async function ensureTable(client, table) {
 }
 
 async function enableTtl(client, tableName) {
-  await client.send(
-    new UpdateTimeToLiveCommand({
-      TableName: tableName,
-      TimeToLiveSpecification: {
-        AttributeName: "ttl",
-        Enabled: true
-      }
-    })
-  );
+  try {
+    await client.send(
+      new UpdateTimeToLiveCommand({
+        TableName: tableName,
+        TimeToLiveSpecification: {
+          AttributeName: "ttl",
+          Enabled: true
+        }
+      })
+    );
+  } catch (error) {
+    if (error.name === "ValidationException" && /TimeToLive.*already enabled/i.test(error.message)) {
+      console.log(`TTL already enabled on ${tableName}.`);
+      return;
+    }
+
+    throw error;
+  }
 
   console.log(`TTL enabled on ${tableName}.`);
 }
